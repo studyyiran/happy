@@ -1,22 +1,24 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-
 import { routerConfig } from "./pages/routerConfig";
+import { ContextStore } from "./pages/contextStore";
 
 export const App = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        {routerConfig.map(({ path, Component, exact, ...otherConfig }) => (
-          <Route
-            exact={exact}
-            key={path}
-            path={path}
-            component={hocWithLayout(Component, otherConfig)}
-          />
-        ))}
-        <Redirect to={routerConfig[0].path} />
-      </Switch>
+      <ContextStore>
+        <Switch>
+          {routerConfig.map(({ path, Component, exact, ...otherConfig }) => (
+            <Route
+              exact={exact}
+              key={path}
+              path={path}
+              component={hocWithLayout(Component, otherConfig)}
+            />
+          ))}
+          <Redirect to={routerConfig[0].path} />
+        </Switch>
+      </ContextStore>
     </BrowserRouter>
   );
 };
