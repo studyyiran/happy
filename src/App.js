@@ -1,26 +1,41 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.less";
+import React, { useEffect } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-function App() {
+import { routerConfig } from "./pages/routerConfig";
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        {routerConfig.map(({ path, Component, exact, ...otherConfig }) => (
+          <Route
+            exact={exact}
+            key={path}
+            path={path}
+            component={hocWithLayout(Component, otherConfig)}
+          />
+        ))}
+        <Redirect to={routerConfig[0].path} />
+      </Switch>
+    </BrowserRouter>
   );
-}
+};
 
-export default App;
+function hocWithLayout(Component, otherConfig) {
+  const { title } = otherConfig;
+  const NewComponent = (routerProps) => {
+    useEffect(() => {
+      console.log("get it");
+      document.title = title;
+    }, []);
+    return (
+      <div className="layout">
+        <header></header>
+        <main>
+          <Component {...routerProps} />
+        </main>
+      </div>
+    );
+  };
+  return NewComponent;
+}
