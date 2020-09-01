@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { StoreAjaxPageContext } from "./context";
+import { Button } from "antd";
 
 export const MainPage = () => {
   const storeAjaxPageContext = useContext(StoreAjaxPageContext);
@@ -29,13 +30,13 @@ const Add = ({ onAddHandler }) => {
           }
         }}
       />
-      <button
+      <Button
         onClick={() => {
           onAddHandler(value);
         }}
       >
         添加+
-      </button>
+      </Button>
     </div>
   );
 };
