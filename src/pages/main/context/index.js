@@ -1,5 +1,10 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 import { useStoreAjaxPageGetActions } from "./useGetActions";
+import {
+  getFromStorage,
+  getOrInitFromStorage,
+  saveIntoStorage,
+} from "../../../common/utils";
 export const StoreAjaxPageContext = createContext({});
 export const StoreAjaxPage = "StoreAjaxPage";
 
@@ -8,8 +13,16 @@ export function StoreAjaxPageContextProvider(props) {
   const initState = {
     todoList: [],
   };
-  const [state, dispatch, useClientRepair] = useReducer(reducer, initState);
+  const [state, dispatch, useClientRepair] = useReducer(
+    reducer,
+    getFromStorage(StoreAjaxPage) || initState
+  );
   const action = useStoreAjaxPageGetActions(state, dispatch);
+
+  // 当 state 变更，就自动更新 storage
+  useEffect(() => {
+    saveIntoStorage(StoreAjaxPage, state);
+  }, [state]);
 
   const propsValue = {
     ...action,
@@ -33,7 +46,7 @@ function reducer(state, action) {
     case storeAjaxPageReducerTypes.addNewTodo: {
       newState = {
         ...newState,
-        todoList: value,
+        todoList: value(newState),
       };
       break;
     }

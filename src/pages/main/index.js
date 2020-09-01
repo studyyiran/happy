@@ -6,7 +6,6 @@ export const MainPage = () => {
   const storeAjaxPageContext = useContext(StoreAjaxPageContext);
   const { storeAjaxPageContextValue, addNewTodo } = storeAjaxPageContext;
   const { todoList } = storeAjaxPageContextValue;
-  console.log(todoList);
   return (
     <div>
       <Add
@@ -14,29 +13,42 @@ export const MainPage = () => {
           addNewTodo(todoContent);
         }}
       />
+      <ul>
+        {todoList.map(({ isFinish, content }) => {
+          return (
+            <li>
+              <div>是否完成：{isFinish ? "✅" : "X"}</div>
+              <div>{content}</div>
+            </li>
+          );
+        })}
+        <li></li>
+      </ul>
     </div>
   );
 };
 
 const Add = ({ onAddHandler }) => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
   return (
     <div>
-      <input
-        value={value}
-        onChange={(e) => {
-          {
-            setValue(e.target.value);
-          }
-        }}
-      />
-      <Button
-        onClick={() => {
-          onAddHandler(value);
-        }}
-      >
-        添加+
-      </Button>
+      <div>
+        <input
+          value={value}
+          onChange={(e) => {
+            {
+              setValue(e.target.value);
+            }
+          }}
+        />
+        <Button
+          onClick={() => {
+            onAddHandler(value);
+          }}
+        >
+          添加+
+        </Button>
+      </div>
     </div>
   );
 };
