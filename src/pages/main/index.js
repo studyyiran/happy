@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { StoreAjaxPageContext } from "./context";
 import { Button } from "antd";
+import Svg from "../../common/components/svg";
 
 export const MainPage = () => {
   const storeAjaxPageContext = useContext(StoreAjaxPageContext);
@@ -17,7 +18,7 @@ export const MainPage = () => {
         {todoList.map(({ isFinish, content }) => {
           return (
             <li>
-              <div>是否完成：{isFinish ? "✅" : "X"}</div>
+              <div>是否完成：{isFinish ? <Svg icon="correct" /> : <Svg />}</div>
               <div>{content}</div>
             </li>
           );

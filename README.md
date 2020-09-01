@@ -9,8 +9,8 @@ Hackathon 项目
 
 
 TODO
-[x] 添加 antd
-[x] 添加基于 localstorage 的数据维护。
+- [x] 添加 antd
+- [x] 添加基于 localstorage 的数据维护。
 基本思路是：
     context 里面的 useEffect 会根据 storeName 拉取 storage 中对应的 json（如果没有就执行初始化数据。并保存到 localstorage 中）
     数据被保存在 store 中
