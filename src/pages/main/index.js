@@ -2,13 +2,14 @@ import React, { useContext, useState } from "react";
 import { StoreAjaxPageContext } from "./context";
 import { Button } from "antd";
 import Svg from "../../common/components/svg";
+import './index.less'
 
 export const MainPage = () => {
   const storeAjaxPageContext = useContext(StoreAjaxPageContext);
   const { storeAjaxPageContextValue, addNewTodo } = storeAjaxPageContext;
   const { todoList } = storeAjaxPageContextValue;
   return (
-    <div>
+    <div className="test-page">
       <Add
         onAddHandler={(todoContent) => {
           addNewTodo(todoContent);

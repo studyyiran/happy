@@ -11,6 +11,6 @@ export const routerConfig = [
   {
     path: "/sub",
     title: "sub",
-    Component: SubPage,
-  },
+    Component: SubPage
+  }
 ];

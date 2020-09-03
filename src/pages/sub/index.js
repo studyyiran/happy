@@ -1,5 +1,4 @@
 import React from "react";
 
-export const SubPage = () => {
-  return <div>SubPage</div>;
+export const SubPage = () => {return <div>SubPage</div>
 };
