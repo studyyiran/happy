@@ -6,7 +6,7 @@ import { filters, data } from "./mockData";
 
 import { Avatar, Divider } from "antd";
 
-console.log(filters, data);
+// console.log(filters, data);
 
 export const TalkUserListPage = (props) => {
   const [activeTab, setActiveTab] = useState(0);

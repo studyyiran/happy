@@ -10,16 +10,17 @@ export const TopicPage = () => {
   const { Search } = Input;
   const listData = hotTopic;
   const [data, setData] = useState(listData);
-  console.log(data, "22433");
+  console.log(hotTopic);
+  // console.log(data, "22433");
 
   const viewIndex = (index) => {
-    console.log(index, "68999");
+    // console.log(index, "68999");
   };
   const search = (value) => {
     let filterList = listData.filter(
       (item) => item.toLowerCase().indexOf(value.toLowerCase()) !== -1
     );
-    console.log(filterList, "3456");
+    // console.log(filterList, "3456");
     setData(filterList);
   };
 

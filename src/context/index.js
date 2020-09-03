@@ -10,16 +10,13 @@ export function StoreZhiTalkContextProvider(props) {
   const initState = {
     hotTopic,
   };
-  const [state, dispatch, useClientRepair] = useReducer(
-    reducer,
-    getFromStorage(StoreZhiTalk) || initState
-  );
+  const [state, dispatch, useClientRepair] = useReducer(reducer, initState);
   const action = useStoreZhiTalkGetActions(state, dispatch);
 
   // 当 state 变更，就自动更新 storage
-  useEffect(() => {
-    saveIntoStorage(StoreZhiTalk, state);
-  }, [state]);
+  // useEffect(() => {
+  //   saveIntoStorage(StoreZhiTalk, state);
+  // }, [state]);
 
   const propsValue = {
     ...action,
