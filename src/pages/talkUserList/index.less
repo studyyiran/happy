@@ -1,0 +1,66 @@
+@import (reference) "~common/styles/index.less";
+
+@p1: {
+  .talkUserList {
+    .font(14);
+    color: black;
+    padding: 15 *@px;
+    .title {
+      .font(16);
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 30 *@px;
+      font-weight: bold;
+    }
+    .tab {                
+      display: flex;                                                                       
+      .font(14);
+      align-items: center;
+      .active {
+        .font(16);
+        font-weight: bold;
+        color: red
+      }
+      .normal {
+        margin-right: 20 *@px;
+      }
+    }
+    .listTitle {
+      margin-top: 10 *@px;
+      padding-top: 20 *@px;
+      border-top: 1px solid #999;
+    }
+    .users {
+      margin-top: 10px;
+      .userIntro {
+        display: flex;
+        width: 100%;
+        .intro {
+          margin-left: 10 *@px;
+          .sex {
+            margin-left: 5px;
+          }
+        }
+      }
+      .data {
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+        .item {
+          border-right: 1px solid #ebebeb;
+          margin-right: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-right: 10px
+        }
+      }
+    }
+  }
+};
+
+.hello(@p1);
+
+
