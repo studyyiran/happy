@@ -1,12 +1,8 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import { useStoreAjaxPageGetActions } from "./useGetActions";
-import {
-  getFromStorage,
-  getOrInitFromStorage,
-  saveIntoStorage,
-} from "../../../common/utils";
+import { getFromStorage, saveIntoStorage } from "../../../common/utils";
 export const StoreAjaxPageContext = createContext({});
-export const StoreAjaxPage = "StoreAjaxPage";
+export const StoreZhiTalk = "StoreZhiTalk";
 
 // store provider
 export function StoreAjaxPageContextProvider(props) {
@@ -15,13 +11,13 @@ export function StoreAjaxPageContextProvider(props) {
   };
   const [state, dispatch, useClientRepair] = useReducer(
     reducer,
-    getFromStorage(StoreAjaxPage) || initState
+    getFromStorage(StoreZhiTalk) || initState
   );
   const action = useStoreAjaxPageGetActions(state, dispatch);
 
   // 当 state 变更，就自动更新 storage
   useEffect(() => {
-    saveIntoStorage(StoreAjaxPage, state);
+    saveIntoStorage(StoreZhiTalk, state);
   }, [state]);
 
   const propsValue = {

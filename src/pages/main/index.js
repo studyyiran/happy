@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { StoreAjaxPageContext } from "./context";
 import { Button } from "antd";
 import Svg from "../../common/components/svg";
-import './index.less'
+import "./index.less";
 
 export const MainPage = () => {
   const storeAjaxPageContext = useContext(StoreAjaxPageContext);
