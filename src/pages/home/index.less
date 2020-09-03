@@ -1,0 +1,38 @@
+
+
+
+@import (reference) "~common/styles/index.less";
+
+@p1: {
+    .main{
+        position: relative;
+        display: flex;
+        width: 80%;
+        height: 800 *@px;
+        justify-content: center;
+        align-items: center;
+        
+        .font(20);
+        .search{
+            position: absolute;
+            top: 10 *@px;
+            left: 30%;
+            width: 210 *@px;
+            height: 60 *@px;
+        }
+        
+    //     .font(20);// font-size 大小 就用 .font() mixin
+    // height: 15px; // 天崩地裂也是 15 像素不改。
+    // width: 15 *@px; // 自动给我转 rem。
+        .sub {
+            position: absolute;
+            top: 100 *@px;
+            left: 20%;
+            width: 90%;
+            height: 700 *@px;
+            
+        }
+    }
+};
+
+.hello(@p1);
