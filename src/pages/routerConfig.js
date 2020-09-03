@@ -3,7 +3,7 @@ import React from "react";
 import { MainPage } from "./main";
 import { SubPage } from "./sub";
 import { HomePage } from "./home";
-import { RankPage } from "./rank";
+import { TopicPage } from "./topic";
 import { TalkUserListPage } from "./talkUserList";
 import { InfoDetailPage } from "./infoDetail";
 
@@ -19,9 +19,9 @@ export const routerConfig = [
     Component: HomePage,
   },
   {
-    path: "/rank",
-    title: "rank",
-    Component: RankPage,
+    path: "/topic",
+    title: "话题",
+    Component: TopicPage,
   },
   {
     path: "/talkUserList",

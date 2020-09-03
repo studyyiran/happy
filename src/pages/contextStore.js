@@ -1,8 +1,6 @@
 import React from "react";
-import { StoreAjaxPageContextProvider } from "./main/context/index";
+import { StoreZhiTalkContextProvider } from "../context/index";
 
 export const ContextStore = ({ children }) => {
-  return (
-    <StoreAjaxPageContextProvider>{children}</StoreAjaxPageContextProvider>
-  );
+  return <StoreZhiTalkContextProvider>{children}</StoreZhiTalkContextProvider>;
 };

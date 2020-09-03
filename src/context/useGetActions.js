@@ -1,13 +1,13 @@
 import React, { useCallback } from "react";
-import { storeAjaxPageReducerTypes } from "./index";
+import { storeZhiTalkReducerTypes } from "./index";
 
 // useCreateActions
-export function useStoreAjaxPageGetActions(state, dispatch) {
+export function useStoreZhiTalkGetActions(state, dispatch) {
   return {
     addNewTodo: useCallback(
       async function (content) {
         dispatch({
-          type: storeAjaxPageReducerTypes.addNewTodo,
+          type: storeZhiTalkReducerTypes.addNewTodo,
           value: (state) => {
             return [
               ...state.todoList,

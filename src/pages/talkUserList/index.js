@@ -40,20 +40,20 @@ export const TalkUserListPage = (props) => {
       </div>
       <div className="data">
         <div className="item">
-          <div>昨日聊过</div>
+          <div>创作：</div>
+          <div>{item.creationsSum}</div>
+        </div>
+        <div className="item">
+          <div>获赞同：</div>
+          <div>{item.likeSum}</div>
+        </div>
+        <div className="item">
+          <div>盐值：</div>
           <div>{item.lastTalkSum}</div>
         </div>
         <div className="item">
           <div>总共聊过</div>
           <div>{item.talkSum}</div>
-        </div>
-        <div className="item">
-          <div>总创作过</div>
-          <div>{item.creationsSum}</div>
-        </div>
-        <div className="item">
-          <div>点赞数</div>
-          <div>{item.likeSum}</div>
         </div>
       </div>
       <Divider></Divider>

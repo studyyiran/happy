@@ -1,19 +1,20 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import { useStoreAjaxPageGetActions } from "./useGetActions";
-import { getFromStorage, saveIntoStorage } from "../../../common/utils";
-export const StoreAjaxPageContext = createContext({});
+import { useStoreZhiTalkGetActions } from "./useGetActions";
+import { getFromStorage, saveIntoStorage } from "../common/utils";
+import { hotTopic } from "./mockData";
+export const StoreZhiTalkContext = createContext({});
 export const StoreZhiTalk = "StoreZhiTalk";
 
 // store provider
-export function StoreAjaxPageContextProvider(props) {
+export function StoreZhiTalkContextProvider(props) {
   const initState = {
-    todoList: [],
+    hotTopic,
   };
   const [state, dispatch, useClientRepair] = useReducer(
     reducer,
     getFromStorage(StoreZhiTalk) || initState
   );
-  const action = useStoreAjaxPageGetActions(state, dispatch);
+  const action = useStoreZhiTalkGetActions(state, dispatch);
 
   // 当 state 变更，就自动更新 storage
   useEffect(() => {
@@ -23,14 +24,14 @@ export function StoreAjaxPageContextProvider(props) {
   const propsValue = {
     ...action,
     useClientRepair,
-    storeAjaxPageContextValue: state,
-    storeAjaxPageContextDispatch: dispatch,
+    storeZhiTalkContextValue: state,
+    storeZhiTalkContextDispatch: dispatch,
   };
-  return <StoreAjaxPageContext.Provider value={propsValue} {...props} />;
+  return <StoreZhiTalkContext.Provider value={propsValue} {...props} />;
 }
 
 // action types
-export const storeAjaxPageReducerTypes = {
+export const storeZhiTalkReducerTypes = {
   setTodoList: "setTodoList",
 };
 
@@ -39,7 +40,7 @@ function reducer(state, action) {
   const { type, value } = action;
   let newState = { ...state };
   switch (type) {
-    case storeAjaxPageReducerTypes.addNewTodo: {
+    case storeZhiTalkReducerTypes.addNewTodo: {
       newState = {
         ...newState,
         todoList: value(newState),
