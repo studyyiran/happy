@@ -28,7 +28,7 @@ export const userInfoArr = [
     desc: "职场和数据分析 创作大佬-大V",
     level: 90, // 知聊的打分 表示知聊对这个人的聊天能力认可度
     // zhitalkTag: ["数据帝", "百科全书"], // 用户聊完后对于一个人社交倾向，知聊用户对他的聊天
-    name: "姓名是纯粹随机的，数据是绝对确定的",
+    name: "姓名是纯粹随机的",
     avatar: "https://pic1.zhimg.com/v2-7431714568e024f3d05664513176532f.jpg", // 头像我也想随机 额啊啊啊啊
     sex: "男",
     creationsSum: 1141, // 客观创作型
