@@ -25,14 +25,18 @@ const filters = [
 
 export const TalkUserListPage = (props) => {
   const storeZhiTalkContext = useContext(StoreZhiTalkContext);
-  const { storeZhiTalkContextValue, setCurrentTalkInfo } = storeZhiTalkContext;
+  const {
+    storeZhiTalkContextValue,
+    setCurrentFriendInfo,
+  } = storeZhiTalkContext;
   const { currentTalkInfo } = storeZhiTalkContextValue;
   const { title, userList } = currentTalkInfo;
   const [activeTab, setActiveTab] = useState(0);
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
-  const jumpToDetail = () => {
+  const jumpToDetail = (img) => {
+    setCurrentFriendInfo(img);
     props.history.push("/userDetail");
   };
   const tab = filters.map((item, index) => (
@@ -45,7 +49,12 @@ export const TalkUserListPage = (props) => {
     </div>
   ));
   const users = userList.map((item, index) => (
-    <div key={index} onClick={jumpToDetail}>
+    <div
+      key={index}
+      onClick={() => {
+        jumpToDetail(item.infoImg);
+      }}
+    >
       <div className="userIntro">
         <Avatar shape="circle" src={item.avatar} />
         <div className="intro">

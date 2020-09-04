@@ -19,5 +19,17 @@ export function useStoreZhiTalkGetActions(state, dispatch) {
       },
       [dispatch, state.hotTopic]
     ),
+
+    setCurrentFriendInfo: useCallback(
+      async function (img) {
+        dispatch({
+          type: storeZhiTalkReducerTypes.setCurrentFriendInfo,
+          value: {
+            img,
+          },
+        });
+      },
+      [dispatch]
+    ),
   };
 }

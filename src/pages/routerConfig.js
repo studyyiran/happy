@@ -9,11 +9,6 @@ import { InfoDetailPage } from "./infoDetail";
 
 export const routerConfig = [
   {
-    path: "/main",
-    title: "main",
-    Component: MainPage,
-  },
-  {
     path: "/home",
     title: "home",
     Component: HomePage,

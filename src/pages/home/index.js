@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Input, List, Typography } from "antd";
 import "./index.less";
 
-export const HomePage = () => {
+export const HomePage = (props) => {
   const { Search } = Input;
   const listData = [
     "印度称中印在边境部署的坦克，都已进入对方的射程内，释放了什么信号 ？",
@@ -60,11 +60,15 @@ export const HomePage = () => {
           bordered
           dataSource={data}
           renderItem={(item, index) => (
-            <a href="/rank">
+            <div
+              onClick={() => {
+                props.history.push("/topic");
+              }}
+            >
               <List.Item onClick={viewIndex(index)}>
                 <Typography.Text mark>{index + 1}</Typography.Text> {item}
               </List.Item>
-            </a>
+            </div>
           )}
         />
       </div>

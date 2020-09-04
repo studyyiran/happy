@@ -14,6 +14,9 @@ export function StoreZhiTalkContextProvider(props) {
       title: hotTopic[0].title,
       userList: userInfoArr,
     },
+    currentFriendInfo: {
+      img: "",
+    },
   };
   const [state, dispatch, useClientRepair] = useReducer(reducer, initState);
   const action = useStoreZhiTalkGetActions(state, dispatch);
@@ -35,6 +38,7 @@ export function StoreZhiTalkContextProvider(props) {
 // action types
 export const storeZhiTalkReducerTypes = {
   setCurrentTalkInfo: "setCurrentTalkInfo",
+  setCurrentFriendInfo: "setCurrentFriendInfo",
 };
 
 // reducer
@@ -46,6 +50,13 @@ function reducer(state, action) {
       newState = {
         ...newState,
         currentTalkInfo: value,
+      };
+      break;
+    }
+    case storeZhiTalkReducerTypes.setCurrentFriendInfo: {
+      newState = {
+        ...newState,
+        currentFriendInfo: value,
       };
       break;
     }
