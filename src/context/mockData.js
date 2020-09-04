@@ -1,11 +1,15 @@
 export const hotTopic = [
   {
-    title: "三体拍电影1",
+    title: "三体拍电视剧",
     totalPeople: 100,
   },
   {
-    title: "三体拍电影2",
+    title: "三体读后感",
     totalPeople: 80,
+  },
+  {
+    title: "聊聊刘慈欣的好作品——流浪地球",
+    totalPeople: 60,
   },
 ];
 
