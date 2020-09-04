@@ -1,11 +1,10 @@
 import React from "react";
 
-import { MainPage } from "./main";
-import { SubPage } from "./sub";
 import { HomePage } from "./home";
 import { TopicPage } from "./topic";
 import { TalkUserListPage } from "./talkUserList";
 import { InfoDetailPage } from "./infoDetail";
+import { UserPickPage } from "./userPickPage";
 
 export const routerConfig = [
   {
@@ -27,5 +26,10 @@ export const routerConfig = [
     path: "/userDetail",
     title: "知聊用户详情",
     Component: InfoDetailPage,
+  },
+  {
+    path: "/userPickPage",
+    title: "用户选择页面",
+    Component: UserPickPage,
   },
 ];

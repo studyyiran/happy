@@ -15,7 +15,7 @@ export function StoreZhiTalkContextProvider(props) {
       userList: userInfoArr,
     },
     currentFriendInfo: {
-      img: "",
+      img: require("./res/default.jpeg"),
     },
   };
   const [state, dispatch, useClientRepair] = useReducer(reducer, initState);
