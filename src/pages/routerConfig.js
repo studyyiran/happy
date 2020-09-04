@@ -6,6 +6,8 @@ import { TalkUserListPage } from "./talkUserList";
 import { InfoDetailPage } from "./infoDetail";
 import { UserPickPage } from "./userPickPage";
 import { TalkPage } from "./talkPage";
+import { EditPage } from "./editPage";
+import { SharePage } from "./sharePage";
 
 export const routerConfig = [
   {
@@ -41,11 +43,11 @@ export const routerConfig = [
   {
     path: "/editPage",
     title: "创作室",
-    Component: UserPickPage,
+    Component: EditPage,
   },
   {
     path: "/sharePage",
     title: "创作室",
-    Component: UserPickPage,
+    Component: SharePage,
   },
 ];

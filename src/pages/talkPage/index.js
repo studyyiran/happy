@@ -1,8 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import './index.less';
 import { Modal } from "antd";
+import {StoreZhiTalkContext} from "../../context";
 
 export const TalkPage = (props) => {
+    const storeZhiTalkContext = useContext(StoreZhiTalkContext);
+    const {
+        storeZhiTalkContextValue,
+    } = storeZhiTalkContext;
+    const { currentTalkInfo } = storeZhiTalkContextValue;
+    const { title } = currentTalkInfo;
   const nextHandler = () => {
       Modal.confirm({
           icon: null,
@@ -10,7 +17,7 @@ export const TalkPage = (props) => {
           okText: "好的",
           cancelText: "稍后再说吧",
           onOk() {
-              props.history.push('123')
+              props.history.push('/editPage')
           },
           onCancel() {
           },
@@ -18,6 +25,7 @@ export const TalkPage = (props) => {
   };
   return (
     <div className="talk-page">
+        <div>共同创作室——{title}</div>
       <img className="bg" src={require('../../context/res/wechat.jpg')}/>
       <button onClick={nextHandler} >结束知聊</button>
       {/*<img className="button" />*/}
