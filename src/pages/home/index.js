@@ -46,7 +46,7 @@ export const HomePage = (props) => {
   };
   return (
     <div className="main">
-      <div className="search">
+      <div className="homeSearch">
         <Search
           placeholder="搜索知聊话题"
           style={{ width: 260 }}

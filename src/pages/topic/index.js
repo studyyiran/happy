@@ -54,6 +54,7 @@ export const TopicPage = (props) => {
             >
               <List.Item>
                 <Typography.Text mark>{index + 1}</Typography.Text> {item.title}
+                <div style={{position:'absolute',left:'80%',display:'inline',color:'dodgerblue'}}>{item.totalPeople}</div> 
               </List.Item>
             </div>
           )}
