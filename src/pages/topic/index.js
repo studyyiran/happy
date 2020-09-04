@@ -57,20 +57,13 @@ export const TopicPage = (props) => {
         <div className="search">
           <Search
             placeholder="搜索知聊话题"
-            style={{ width: 260 }}
+            className="input"
             onSearch={(value) => search(value)}
           ></Search>
         </div>
         <div className="addTopic">
          <Button type="primary" shape="circle" onClick={handleAdd}><div className="add">+</div></Button>
         </div> 
-      <div className="search">
-        <Search
-          placeholder="搜索知聊话题"
-          style={{ width: 260 }}
-          onSearch={(value) => search(value)}
-        ></Search>
-      </div>
         
       </div>
       <div className="sub">
