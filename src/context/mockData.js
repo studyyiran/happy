@@ -52,7 +52,40 @@ export const userInfoArr = [
     creationsSum: 119, // 客观创作型
     likeSum: "6.4万", // 用户量
     zhihuTag: ["古灵精怪", "美食达人", "有点皮", "烘焙爱好者", "自媒体"], // 好友印象
-  }
+  },
+  {
+    infoImg: 'https://pic2.zhimg.com/v2-27d47c49de31d9c29a125662c5e6f658.jpg',
+    intro: "历史学家", // 第六组代言者评价
+    level: 70, // 知聊的打分 表示知聊对这个人的聊天能力认可度
+    name: "红护",
+    avatar: "https://pic1.zhimg.com/v2-7431714568e024f3d05664513176532f.jpg",
+    sex: "男",
+    creationsSum: 300, // 客观创作型
+    likeSum: "2.4万", // 用户量
+    zhihuTag: ["文豪", "历史", "讲故事"], // 好友印象
+  },
+  {
+    infoImg: 'https://pic4.zhimg.com/v2-fccb2d87e91ccf5a1215ebf2871816d8.jpg',
+    intro: "历史学家", // 第六组代言者评价
+    level: 40, // 知聊的打分 表示知聊对这个人的聊天能力认可度
+    name: "天雨白",
+    avatar: "https://pic1.zhimg.com/v2-7431714568e024f3d05664513176532f.jpg",
+    sex: "女",
+    creationsSum: 100, // 客观创作型
+    likeSum: "1500", // 用户量
+    zhihuTag: ["最美辣妈", "旅行者", "美食爱好者"], // 好友印象
+  },
+  {
+    infoImg: 'https://pic4.zhimg.com/v2-fccb2d87e91ccf5a1215ebf2871816d8.jpg',
+    intro: "历史学家", // 第六组代言者评价
+    level: 120, // 知聊的打分 表示知聊对这个人的聊天能力认可度
+    name: "温柔JUNZ",
+    avatar: "https://pic1.zhimg.com/v2-7431714568e024f3d05664513176532f.jpg",
+    sex: "男",
+    creationsSum: 400, // 客观创作型
+    likeSum: "100", // 用户量
+    zhihuTag: ["温柔"], // 好友印象
+  },
 ];
 
 /*
