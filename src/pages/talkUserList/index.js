@@ -68,15 +68,15 @@ export const TalkUserListPage = (props) => {
       </div>
       <div className="data">
         <div className="item">
-          <div>创作：</div>
+          <div>创作</div>
           <div>{item.creationsSum}</div>
         </div>
         <div className="item">
-          <div>获赞同：</div>
+          <div>获赞同</div>
           <div>{item.likeSum}</div>
         </div>
-        <div className="item">
-          <div>好友标签：</div>
+        <div className="item" style={{'border': 'none'}}>
+          <div>好友标签</div>
           <div>{item.zhihuTag.join(",")}</div>
         </div>
         {/*<div className="item">*/}

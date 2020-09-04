@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Input, List, Typography } from "antd";
+import { Input, List, Typography, Button } from "antd";
 import "../home/index.less";
 import { StoreZhiTalkContext } from "../../context";
 
@@ -26,12 +26,15 @@ export const TopicPage = (props) => {
 
   return (
     <div className="main">
+      <div className="header">
       <div className="search">
         <Search
           placeholder="搜索知聊话题"
           style={{ width: 260 }}
           onSearch={(value) => search(value)}
         ></Search>
+      </div>
+        <Button type="primary" shape="circle"><div className="add">+</div></Button>
       </div>
       <div className="sub">
         <List
