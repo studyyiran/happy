@@ -20,7 +20,7 @@ export const hotTalkStudio = [];
 吃瓜 10%
 
  */
-const userInfoList = [
+export const userInfoArr = [
   {
     realUrl: "https://www.zhihu.com/people/houziliaorenwu", // 猴子
     intro: "不懂文学的码农不是好的创作者", // 第六组代言者评价

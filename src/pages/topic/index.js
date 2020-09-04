@@ -3,9 +3,9 @@ import { Input, List, Typography } from "antd";
 import "../home/index.less";
 import { StoreZhiTalkContext } from "../../context";
 
-export const TopicPage = () => {
+export const TopicPage = (props) => {
   const storeZhiTalkContext = useContext(StoreZhiTalkContext);
-  const { storeZhiTalkContextValue } = storeZhiTalkContext;
+  const { storeZhiTalkContextValue, setCurrentTalkInfo } = storeZhiTalkContext;
   const { hotTopic } = storeZhiTalkContextValue;
   const { Search } = Input;
   const listData = hotTopic;
@@ -18,7 +18,7 @@ export const TopicPage = () => {
   };
   const search = (value) => {
     let filterList = listData.filter(
-      (item) => item.toLowerCase().indexOf(value.toLowerCase()) !== -1
+      (item) => item.title.toLowerCase().indexOf(value.toLowerCase()) !== -1
     );
     // console.log(filterList, "3456");
     setData(filterList);
@@ -40,11 +40,16 @@ export const TopicPage = () => {
           bordered
           dataSource={data}
           renderItem={(item, index) => (
-            <a href="https://www.baidu.com">
+            <div
+              onClick={() => {
+                setCurrentTalkInfo(index);
+                props.history.push("/talkUserList");
+              }}
+            >
               <List.Item>
                 <Typography.Text mark>{index + 1}</Typography.Text> {item.title}
               </List.Item>
-            </a>
+            </div>
           )}
         />
       </div>

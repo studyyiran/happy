@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import { useStoreZhiTalkGetActions } from "./useGetActions";
 import { getFromStorage, saveIntoStorage } from "../common/utils";
-import { hotTopic } from "./mockData";
+import { hotTopic, userInfoArr } from "./mockData";
 export const StoreZhiTalkContext = createContext({});
 export const StoreZhiTalk = "StoreZhiTalk";
 
@@ -9,6 +9,11 @@ export const StoreZhiTalk = "StoreZhiTalk";
 export function StoreZhiTalkContextProvider(props) {
   const initState = {
     hotTopic,
+    currentTalkInfo: {
+      id: 0,
+      title: hotTopic[0].title,
+      userList: userInfoArr,
+    },
   };
   const [state, dispatch, useClientRepair] = useReducer(reducer, initState);
   const action = useStoreZhiTalkGetActions(state, dispatch);
@@ -29,7 +34,7 @@ export function StoreZhiTalkContextProvider(props) {
 
 // action types
 export const storeZhiTalkReducerTypes = {
-  setTodoList: "setTodoList",
+  setCurrentTalkInfo: "setCurrentTalkInfo",
 };
 
 // reducer
@@ -37,10 +42,10 @@ function reducer(state, action) {
   const { type, value } = action;
   let newState = { ...state };
   switch (type) {
-    case storeZhiTalkReducerTypes.addNewTodo: {
+    case storeZhiTalkReducerTypes.setCurrentTalkInfo: {
       newState = {
         ...newState,
-        todoList: value(newState),
+        currentTalkInfo: value,
       };
       break;
     }

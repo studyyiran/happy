@@ -1,25 +1,23 @@
 import React, { useCallback } from "react";
 import { storeZhiTalkReducerTypes } from "./index";
+import { userInfoArr } from "./mockData";
 
 // useCreateActions
 export function useStoreZhiTalkGetActions(state, dispatch) {
   return {
-    addNewTodo: useCallback(
-      async function (content) {
+    setCurrentTalkInfo: useCallback(
+      async function (index) {
+        const talkInfo = {
+          id: index,
+          title: state.hotTopic[index].title,
+          userList: userInfoArr,
+        };
         dispatch({
-          type: storeZhiTalkReducerTypes.addNewTodo,
-          value: (state) => {
-            return [
-              ...state.todoList,
-              {
-                isFinish: false,
-                content,
-              },
-            ];
-          },
+          type: storeZhiTalkReducerTypes.setCurrentTalkInfo,
+          value: talkInfo,
         });
       },
-      [dispatch]
+      [dispatch, state.hotTopic]
     ),
   };
 }

@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import "./index.less";
 
-import { filters, data } from "./mockData";
+import { filters } from "./mockData";
 
 import { Avatar, Divider } from "antd";
+import { StoreZhiTalkContext } from "../../context";
 
 // console.log(filters, data);
 
 export const TalkUserListPage = (props) => {
+  const storeZhiTalkContext = useContext(StoreZhiTalkContext);
+  const { storeZhiTalkContextValue, setCurrentTalkInfo } = storeZhiTalkContext;
+  const { currentTalkInfo } = storeZhiTalkContextValue;
+  const { title, userList } = currentTalkInfo;
   const [activeTab, setActiveTab] = useState(0);
   const handleTabClick = (index) => {
     setActiveTab(index);
@@ -25,7 +30,7 @@ export const TalkUserListPage = (props) => {
       {item.filterName}
     </div>
   ));
-  const users = data.infoList.map((item, index) => (
+  const users = userList.map((item, index) => (
     <div key={index} onClick={jumpToDetail}>
       <div className="userIntro">
         <Avatar shape="circle" src={item.avatar} />
@@ -61,7 +66,7 @@ export const TalkUserListPage = (props) => {
   ));
   return (
     <div className="talkUserList">
-      <div className="title">{data.title}</div>
+      <div className="title">{title}</div>
       <div className="tab">{tab}</div>
       <h2 className="listTitle">想要聊</h2>
       <div className="users">{users}</div>
