@@ -9,7 +9,7 @@ export function useStoreZhiTalkGetActions(state, dispatch) {
       async function (index) {
         const talkInfo = {
           id: index,
-          title: state.hotTopic[index].title,
+          title: state.hotTopic[index > 1 ? 0: index].title,
           userList: userInfoArr,
         };
         dispatch({

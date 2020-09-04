@@ -56,7 +56,7 @@ export const TalkUserListPage = (props) => {
       }}
     >
       <div className="userIntro">
-        <Avatar shape="circle" src={item.avatar} />
+        <Avatar shape="circle" src={item.avatar} size={50} />
         <div className="intro">
           <div>
             <span>用户名：{item.name}</span>
@@ -91,7 +91,6 @@ export const TalkUserListPage = (props) => {
     <div className="talkUserList">
       <div className="title">{title}</div>
       <div className="tab">{tab}</div>
-      <h2 className="listTitle">想要聊</h2>
       <div className="users">{users}</div>
     </div>
   );

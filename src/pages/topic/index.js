@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Input, List, Typography, Button } from "antd";
+import { Input, List, Typography, Button, Modal} from "antd";
 import "../home/index.less";
 import { StoreZhiTalkContext } from "../../context";
 
@@ -10,7 +10,9 @@ export const TopicPage = (props) => {
   const { Search } = Input;
   const listData = hotTopic;
   const [data, setData] = useState(listData);
-  console.log(hotTopic);
+  const [visible, setVisible] = useState(false);
+  const [value, setValue] = useState('');
+
   // console.log(data, "22433");
 
   const viewIndex = (index) => {
@@ -24,6 +26,31 @@ export const TopicPage = (props) => {
     setData(filterList);
   };
 
+  const handleAdd = () => {
+    setVisible(true)
+  }
+  const handleCancel = () => {
+    setVisible(false)
+  }
+
+  const handleOk = () => {
+    const data = [].concat(listData)
+    const topic = data.find((v) => {
+      return v.title === value
+    })
+    if(topic) {
+      topic.people = topic.people + 1
+    } else {
+      data.push({title: value, totalPeople: 1})
+    }
+    setData(data)
+    handleCancel()
+  }
+
+  const handleChange = (e) => {
+    setValue(e.target.value)
+  }
+
   return (
     <div className="main">
       <div className="header">
@@ -35,9 +62,16 @@ export const TopicPage = (props) => {
           ></Search>
         </div>
         <div className="addTopic">
-         <Button type="primary" shape="circle"><div className="add">+</div></Button>
+         <Button type="primary" shape="circle" onClick={handleAdd}><div className="add">+</div></Button>
         </div> 
-           
+      <div className="search">
+        <Search
+          placeholder="搜索知聊话题"
+          style={{ width: 260 }}
+          onSearch={(value) => search(value)}
+        ></Search>
+      </div>
+        
       </div>
       <div className="sub">
         <List
@@ -54,12 +88,22 @@ export const TopicPage = (props) => {
             >
               <List.Item>
                 <Typography.Text mark>{index + 1}</Typography.Text> {item.title}
-                <div style={{position:'absolute',left:'80%',display:'inline',color:'dodgerblue'}}>{item.totalPeople}</div> 
+                <div style={{position:'absolute',right:'20px',display:'inline',color:'dodgerblue'}}>{item.totalPeople}</div> 
               </List.Item>
             </div>
           )}
         />
       </div>
+      <Modal
+          title="发起话题"
+          visible={visible}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          onText="保存"
+          onCancelText="取消"
+        >
+          <Input placeholder="一句话描述你想要聊的话题" onChange={handleChange} />
+        </Modal>
     </div>
   );
 };
