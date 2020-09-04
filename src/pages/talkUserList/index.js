@@ -75,7 +75,7 @@ export const TalkUserListPage = (props) => {
           <div>获赞同</div>
           <div>{item.likeSum}</div>
         </div>
-        <div className="item" style={{'border': 'none'}}>
+        <div className="item" style={{ border: "none" }}>
           <div>好友标签</div>
           <div>{item.zhihuTag.join(",")}</div>
         </div>

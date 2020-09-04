@@ -57,6 +57,8 @@ export const UserPickPage = (props) => {
         okText="开始知聊"
         cancelText="了解了"
         onOk={() => {
+          debugger;
+          props.history.push("/talkPage");
           setVisible(false);
         }}
         onCancel={() => {

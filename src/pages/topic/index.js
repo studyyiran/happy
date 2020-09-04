@@ -35,9 +35,10 @@ export const TopicPage = (props) => {
           ></Search>
         </div>
         <div className="addTopic">
-         <Button type="primary" shape="circle"><div className="add">+</div></Button>
-        </div> 
-           
+          <Button type="primary" shape="circle">
+            <div className="add">+</div>
+          </Button>
+        </div>
       </div>
       <div className="sub">
         <List
