@@ -1,0 +1,62 @@
+@import (reference) "~common/styles/index.less";
+
+@p1: {
+  .main {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 1000 * @px;
+    justify-content: center;
+    align-items: center;
+    .font(20);
+    .header {
+      position: absolute;
+      top: 10 * @px;
+      width: 100%;
+      height: 60 * @px;
+      justify-content: space-around;
+      .back{
+        position: absolute;
+        left:5%;
+      }
+      .search {
+        position: absolute;
+        left:20%;
+        .input{
+          width: 360 *@px;
+        }
+      }
+      .addTopic {
+        position: absolute;
+        //display: inline-block;
+        width: 50 * @px;
+        height: 56 * @px;
+        right: 30 *@px;
+        .add {
+          .font(16);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40 * @px;
+          height: 100%;
+        }
+      }
+      button {
+        display: inline-block;
+      }
+    }
+
+    //     .font(20);// font-size 大小 就用 .font() mixin
+    // height: 15px; // 天崩地裂也是 15 像素不改。
+    // width: 15 *@px; // 自动给我转 rem。
+    .sub {
+      position: absolute;
+      top: 100 * @px;
+      left: 0;
+      width: 100%;
+      height: 800 * @px;
+    }
+  }
+};
+
+.hello(@p1);

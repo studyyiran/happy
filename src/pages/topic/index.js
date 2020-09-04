@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Input, List, Typography, Button, Modal} from "antd";
-import "../home/index.less";
+import "./index.less";
 import { StoreZhiTalkContext } from "../../context";
 
 export const goBack = (props) =>{
@@ -69,8 +69,9 @@ export const TopicPage = (props) => {
             onSearch={(value) => search(value)}
           ></Search>
         </div>
-        <div className="addTopic">
-         <Button type="primary" shape="circle" onClick={handleAdd}><div className="add">+</div></Button>
+        <div className="addTopic" onClick={handleAdd}>
+          <img style={{width:'31px',height: '31px'}} src={require('../../context/res/add.png')}/>
+         {/* <Button type="primary" shape="circle" ><div className="add">+</div></Button> */}
         </div> 
         
       </div>
