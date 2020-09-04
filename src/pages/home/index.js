@@ -49,7 +49,7 @@ export const HomePage = (props) => {
       <div className="homeSearch">
         <Search
           placeholder="搜索知聊话题"
-          style={{ width: 260 }}
+          className="input"
           onSearch={(value) => search(value)}
         ></Search>
       </div>

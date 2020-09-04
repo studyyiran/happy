@@ -2,35 +2,48 @@
 
 @p1: {
   .main {
-    position: relative;
+    position: absolute;
     display: flex;
-    width: 80%;
-    height: 800 * @px;
+    width: 100%;
+    height: 1000 * @px;
     justify-content: center;
     align-items: center;
     .homeSearch{
       position: absolute;
+      justify-content: center;
       top: 10 * @px;
-      left: 22%;
+      //left: 2%;
       width: 300 * @px;
       height: 60 * @px;
+      .input{
+        width: 360 *@px;
+      }
     }
     .font(20);
     .header {
+      position: absolute;
+      top: 10 * @px;
+      width: 100%;
+      height: 60 * @px;
+      justify-content: space-around;
       .search {
         position: absolute;
-        top: 10 * @px;
-        left: 22%;
-        width: 300 * @px;
-        height: 60 * @px;
+        //justify-content: center;
+        //align-items: center;
+        left:20%;
+        .input{
+          width: 360 *@px;
+        }
       }
       .addTopic {
         position: absolute;
-        display: inline;
-        top: 10 * @px;
-        right: -15%;
+        //display: inline-block;
         width: 50 * @px;
         height: 56 * @px;
+        right: 30 *@px;
+        //justify-content: space-around;
+        //align-items: center;
+       
         .add {
           .font(16);
           display: flex;
@@ -51,9 +64,9 @@
     .sub {
       position: absolute;
       top: 100 * @px;
-      left: 16%;
-      width: 96%;
-      height: 700 * @px;
+      left: 0;
+      width: 100%;
+      height: 800 * @px;
     }
   }
 };
