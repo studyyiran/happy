@@ -2,12 +2,26 @@ import React, { useContext, useState } from "react";
 
 import "./index.less";
 
-import { filters } from "./mockData";
-
 import { Avatar, Divider } from "antd";
 import { StoreZhiTalkContext } from "../../context";
 
-// console.log(filters, data);
+const filters = [
+  {
+    filterName: "曾经聊过",
+  },
+  {
+    filterName: "3分钟内发布",
+  },
+  {
+    filterName: "90后",
+  },
+  {
+    filterName: "相同爱好",
+  },
+  {
+    filterName: "高盐值",
+  },
+];
 
 export const TalkUserListPage = (props) => {
   const storeZhiTalkContext = useContext(StoreZhiTalkContext);
@@ -36,11 +50,11 @@ export const TalkUserListPage = (props) => {
         <Avatar shape="circle" src={item.avatar} />
         <div className="intro">
           <div>
-            <span>{item.name}</span>
-            <span className="sex">{item.sex}</span>
-            <span className="sex">{item.level}</span>
+            <span>用户名：{item.name}</span>
+            <span className="sex">性别：{item.sex}</span>
+            <span className="sex">知聊分：{item.level}</span>
           </div>
-          <div>{item.intro}</div>
+          <div>个人描述：{item.intro}</div>
         </div>
       </div>
       <div className="data">
@@ -53,13 +67,13 @@ export const TalkUserListPage = (props) => {
           <div>{item.likeSum}</div>
         </div>
         <div className="item">
-          <div>盐值：</div>
-          <div>{item.lastTalkSum}</div>
+          <div>好友标签：</div>
+          <div>{item.zhihuTag.join(",")}</div>
         </div>
-        <div className="item">
-          <div>总共聊过</div>
-          <div>{item.talkSum}</div>
-        </div>
+        {/*<div className="item">*/}
+        {/*  <div>总共聊过</div>*/}
+        {/*  <div>{item.zhihuTag.join(",")}</div>*/}
+        {/*</div>*/}
       </div>
       <Divider></Divider>
     </div>
