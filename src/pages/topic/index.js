@@ -27,14 +27,17 @@ export const TopicPage = (props) => {
   return (
     <div className="main">
       <div className="header">
-      <div className="search">
-        <Search
-          placeholder="搜索知聊话题"
-          style={{ width: 260 }}
-          onSearch={(value) => search(value)}
-        ></Search>
-      </div>
-        <Button type="primary" shape="circle"><div className="add">+</div></Button>
+        <div className="search">
+          <Search
+            placeholder="搜索知聊话题"
+            style={{ width: 260 }}
+            onSearch={(value) => search(value)}
+          ></Search>
+        </div>
+        <div className="addTopic">
+         <Button type="primary" shape="circle"><div className="add">+</div></Button>
+        </div> 
+           
       </div>
       <div className="sub">
         <List
