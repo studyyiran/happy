@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './index.less';
-import { Modal } from "antd";
+import { Modal, message } from "antd";
 
 export const SharePage = (props) => {
     const [havePost, setHavePost] = useState(false)
@@ -15,6 +15,7 @@ export const SharePage = (props) => {
           cancelText: "再等等",
           onOk() {
               setHavePost(true)
+              message.info('创作提交完成！')
           },
           onCancel() {
           },
@@ -22,9 +23,9 @@ export const SharePage = (props) => {
   };
   return (
     <div className="editPage">
-      <img className="bg" src={require('../../context/res/article.png')}/>
+      <img className="bg" onClick={nextHandler} src={require('../../context/res/article.png')}/>
 
-      {/* <button onClick={nextHandler} >{havePost ? "已提交" : "提交审核"}</button> */}
+      {/* <button  >{havePost ? "已提交" : "提交审核"}</button> */}
       {/*<img className="button" />*/}
     </div>
   );

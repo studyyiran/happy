@@ -32,8 +32,8 @@ export const userInfoArr = [
     desc: "职场和数据分析 创作大佬-大V",
     level: 90, // 知聊的打分 表示知聊对这个人的聊天能力认可度
     // zhitalkTag: ["数据帝", "百科全书"], // 用户聊完后对于一个人社交倾向，知聊用户对他的聊天
-    name: "姓名是纯粹随机的",
-    avatar: "https://pic1.zhimg.com/v2-7431714568e024f3d05664513176532f.jpg", // 头像我也想随机 额啊啊啊啊
+    name: "猴子",
+    avatar: "https://pic2.zhimg.com/v2-09797f959fa8f75c2295d38c49cb51ab_xll.jpg", // 头像我也想随机 额啊啊啊啊
     sex: "男",
     creationsSum: 1141, // 客观创作型
     likeSum: "9.5万", // 用户量
@@ -47,12 +47,12 @@ export const userInfoArr = [
     level: 90, // 知聊的打分 表示知聊对这个人的聊天能力认可度
     zhitalkTag: ["热情", "萌", "细致"],
     name: "黑猫厨房",
-    avatar: "https://pic2.zhimg.com/v2-09797f959fa8f75c2295d38c49cb51ab_xll.jpg",
+    avatar: "https://pic1.zhimg.com/v2-7431714568e024f3d05664513176532f.jpg",
     sex: "女",
     creationsSum: 119, // 客观创作型
     likeSum: "6.4万", // 用户量
     zhihuTag: ["古灵精怪", "美食达人", "有点皮", "烘焙爱好者", "自媒体"], // 好友印象
-  },
+  }
 ];
 
 /*
