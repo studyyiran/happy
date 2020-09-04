@@ -34,7 +34,7 @@ export const InfoDetailPage = (props) => {
             setHaveInvite(true);
             message.success("已成功发出邀请，10 分钟内将会答复");
             window.setTimeout(() => {
-              props.history.push("");
+              props.history.push("/userPickPage");
             }, 3000);
           }}
         >
