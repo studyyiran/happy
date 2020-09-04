@@ -50,6 +50,8 @@ export const TalkUserListPage = (props) => {
   ));
   const users = userList.map((item, index) => (
     <div
+      style={{padding: '12px', background: '#fff', marginBottom: '12px'}}
+      className="userCt"
       key={index}
       onClick={() => {
         jumpToDetail(item.infoImg);
@@ -58,38 +60,40 @@ export const TalkUserListPage = (props) => {
       <div className="userIntro">
         <Avatar shape="circle" src={item.avatar} size={50} />
         <div className="intro">
-          <div>
-            <span>用户名：{item.name}</span>
-            <span className="sex">性别：{item.sex}</span>
-            <span className="sex">知聊分：{item.level}</span>
+          <div className="basicInfo">
+            <div className="shrink">
+            <span className="name">{item.name}</span>
+            <img src={require(`../../context/res/${item.sex === '男' ? 'man' : 'woman'}.png`)} className="sex"></img>
+            </div>
+            <span className="score">知聊分：{item.level}</span>
           </div>
-          <div>个人描述：{item.intro}</div>
+          <div className="des">个人描述：{item.intro}</div>
         </div>
       </div>
       <div className="data">
         <div className="item">
-          <div>创作</div>
-          <div>{item.creationsSum}</div>
+          <div className="des">创作</div>
+          <div className="num">{item.creationsSum}</div>
         </div>
         <div className="item">
-          <div>获赞同</div>
-          <div>{item.likeSum}</div>
+          <div className="des">获赞同</div>
+          <div className="num">{item.likeSum}</div>
         </div>
         <div className="item" style={{ border: "none" }}>
-          <div>好友标签</div>
-          <div>{item.zhihuTag.join(",")}</div>
+          <div  className="des">好友标签</div>
+          <div className="text">{item.zhihuTag.join(",")}</div>
         </div>
         {/*<div className="item">*/}
         {/*  <div>总共聊过</div>*/}
         {/*  <div>{item.zhihuTag.join(",")}</div>*/}
         {/*</div>*/}
       </div>
-      <Divider></Divider>
     </div>
   ));
   return (
     <div className="talkUserList">
-      <div className="title">{title}</div>
+      <div className="title"><span className="titleLimit">{title}</span></div>
+      <div className="border"></div>
       <div className="tab">{tab}</div>
       <div className="users">{users}</div>
     </div>
