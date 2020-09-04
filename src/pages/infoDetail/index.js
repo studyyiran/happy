@@ -22,11 +22,13 @@ export const InfoDetailPage = (props) => {
           onClick={() => {
             message.info(`不再看Ta「${currentTalkInfo.title}」建立的创作室了`);
           }}
+          className="button-cus"
         >
           不感兴趣
         </Button>
         <Button
           type="primary"
+          className="button-cus"
           onClick={() => {
             if (haveInvite) {
               return;

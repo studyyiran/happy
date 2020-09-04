@@ -30,26 +30,10 @@ export const UserPickPage = (props) => {
 
   return (
     <div className="userPickPage">
-      <div className="container">
-        <div className="left">
-          <div>创作室创建者</div>
-          <img className="img" src={img} />
-        </div>
-        <div className="right">
-          <div>创作室参与者</div>
-          <img className="img" src={require("../../context/res/me.jpeg")} />
-        </div>
-      </div>
-
-      <div className="button">
-        <Button
-          type="primary"
-          onClick={() => {
+      <div className="container" onClick={() => {
             setVisible(true);
-          }}
-        >
-          开始「知聊」
-        </Button>
+          }}>
+        <img className="img" src={require("../../context/res/agrgre.png")} />
       </div>
       <Modal
         title="知聊提示"
