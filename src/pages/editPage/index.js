@@ -17,10 +17,8 @@ export const EditPage = (props) => {
       })
   };
   return (
-    <div className="editPage">
-        <div>编辑室</div>
-      <img className="bg" src={require('../../context/res/editPage.jpg')}/>
-      <button onClick={nextHandler} >结束编辑</button>
+    <div className="editPage" onClick={nextHandler}>
+      <img className="bg" src={require('../../context/res/editor.png')}/>
       {/*<img className="button" />*/}
     </div>
   );

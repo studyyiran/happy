@@ -24,10 +24,8 @@ export const TalkPage = (props) => {
       })
   };
   return (
-    <div className="talk-page">
-        <div>共同创作室——{title}</div>
-      <img className="bg" src={require('../../context/res/wechat.jpg')}/>
-      <button onClick={nextHandler} >结束知聊</button>
+    <div className="talk-page" onClick={nextHandler}>
+      <img className="bg" src={require('../../context/res/talk.png')}/>
       {/*<img className="button" />*/}
     </div>
   );

@@ -22,10 +22,9 @@ export const SharePage = (props) => {
   };
   return (
     <div className="editPage">
-        <div>作品浏览</div>
-      <img className="bg" src={require('../../context/res/finishPage.jpg')}/>
+      <img className="bg" src={require('../../context/res/article.png')}/>
 
-      <button onClick={nextHandler} >{havePost ? "已提交" : "提交审核"}</button>
+      {/* <button onClick={nextHandler} >{havePost ? "已提交" : "提交审核"}</button> */}
       {/*<img className="button" />*/}
     </div>
   );
