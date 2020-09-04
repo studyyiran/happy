@@ -23,6 +23,10 @@ const filters = [
   },
 ];
 
+export const goBack = (props) =>{
+  window.history.back();
+}
+
 export const TalkUserListPage = (props) => {
   const storeZhiTalkContext = useContext(StoreZhiTalkContext);
   const {
@@ -89,6 +93,9 @@ export const TalkUserListPage = (props) => {
   ));
   return (
     <div className="talkUserList">
+       <div className="back" onClick={goBack}>
+            <img style={{width:'20px',height: '20px'}} src={require('../../context/res/箭头.png')}/>
+        </div>
       <div className="title">{title}</div>
       <div className="tab">{tab}</div>
       <div className="users">{users}</div>

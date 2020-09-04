@@ -10,7 +10,7 @@ export const EditPage = (props) => {
           okText: "编辑好了",
           cancelText: "再等等",
           onOk() {
-              props.history.push('/sharePage')
+              window.history.push('/sharePage')
           },
           onCancel() {
           },

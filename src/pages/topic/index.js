@@ -3,6 +3,10 @@ import { Input, List, Typography, Button, Modal} from "antd";
 import "../home/index.less";
 import { StoreZhiTalkContext } from "../../context";
 
+export const goBack = (props) =>{
+  window.history.back();
+}
+
 export const TopicPage = (props) => {
   const storeZhiTalkContext = useContext(StoreZhiTalkContext);
   const { storeZhiTalkContextValue, setCurrentTalkInfo } = storeZhiTalkContext;
@@ -54,7 +58,11 @@ export const TopicPage = (props) => {
   return (
     <div className="main">
       <div className="header">
+          <div className="back" onClick={goBack}>
+            <img style={{width:'20px',height: '20px'}} src={require('../../context/res/箭头.png')}/>
+          </div>
         <div className="search">
+         
           <Search
             placeholder="搜索知聊话题"
             className="input"
